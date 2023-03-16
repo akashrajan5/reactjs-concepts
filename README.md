@@ -1,2 +1,2 @@
 # reactjs-concepts
-App concepts related to react js in present in this repository
+Concepts related to react js is present in this repository
