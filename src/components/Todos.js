@@ -1,7 +1,7 @@
 import React from "react";
 
 const Todos = ({ todos, addTodo }) => {
-    console.log("Todos Render");
+    console.log("Todos component rendered");
     return (
         <>
             <h2>My Todos</h2>

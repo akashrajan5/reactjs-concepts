@@ -1,33 +1,19 @@
-import { useCallback, useState } from 'react';
+import React from 'react';
 import './App.css';
-import Todos from './components/Todos';
+import CounterClass from './components/CounterClass';
+import { ErrorBoundaries } from './components/ErrorBoundaryComponent';
+// import { Memo } from './components/MemoHook';
+// import { Callback } from './components/CallbackHook';
 
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState([]);
-
-  const increment = () => {
-    console.log("inc rendered");
-    setCount((c) => c + 1);
-  };
-
-  const addTodo = useCallback(() => {
-    console.log("add todo rendered");
-    setTodos((t) => [...t, "New Todo"]);
-  }, []);
-
-  console.log("App rendered");
   return (
     <>
-      <Todos todos={todos} addTodo={addTodo} />
-      <hr />
-      <div>
-        <h3>Count: {count}</h3>
-        <button onClick={increment}>+</button>
-      </div>
+      <ErrorBoundaries>
+        <CounterClass />
+      </ErrorBoundaries>
     </>
   );
 }
 
-export default App;
+export default React.memo(App);

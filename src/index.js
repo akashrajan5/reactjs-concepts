@@ -1,16 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import { CounterClass } from './components/CounterClass';
-// import { Memo } from './components/Memo';
-import TestClass from './components/TestClass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TestClass message="Hello" />
+    <App />
   </React.StrictMode>
 );
 

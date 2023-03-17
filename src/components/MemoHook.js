@@ -4,19 +4,16 @@ import { useState, useMemo } from "react";
 export const Memo = () => {
     const [counter1, setCounter1] = useState(0);
     const [counter2, setCounter2] = useState(0);
+    // const expensiveCalculation = expFunc(counter1);
     const expensiveCalculation = useMemo(() => expFunc(counter1), [counter1]);
 
     function expFunc(counter) {
-        console.log("exp function runs");
+        console.log("expensive function called");
         return counter + 1000;
     }
 
-    const increment1 = () => {
-        setCounter1(prev => prev + 1);
-    };
-    const increment2 = () => {
-        setCounter2(prev => prev + 1);
-    };
+    const increment1 = () => setCounter1(prev => prev + 1);
+    const increment2 = () => setCounter2(prev => prev + 1);
 
     return (
         <div>
