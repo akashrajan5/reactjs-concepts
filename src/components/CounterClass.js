@@ -40,7 +40,7 @@ class CounterClass extends Component {
         console.log("component did update", prevProp, this.props, prevState, this.state);
     }
 
-    // this function runs on every update and have access to props and state values, returns boolean (default - true) and will not rerender on specific state or props if it returns false
+    // this function runs on every update and have access to updated props and state values, returns boolean (default - true) and will not rerender if it returns false based on specific state or props
     shouldComponentUpdate(nextProp, nextState) {
         console.log("should component update", nextProp, nextState);
         // if (nextState.count === 8) {
@@ -66,7 +66,7 @@ class CounterClass extends Component {
 
     render() {
         // for generating error inside rendering phase
-        if (this.state.count === 10) throw new Error("Error inside render phase");
+        // if (this.state.count === 10) throw new Error("Error inside render phase");
         return (
             <div>
                 <Title />
@@ -83,5 +83,3 @@ class CounterClass extends Component {
 
 
 export default CounterClass;
-
-// error boundaries are way to catch tricky errors that occur during the render phase. In the past, this would have caused the app to unmount completely, and the user would just see a blank web page
